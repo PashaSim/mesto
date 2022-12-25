@@ -1,0 +1,13 @@
+.grid__like {
+    border: none;
+    width: 21px;
+    height: 18px;
+    padding: 0;
+    background: url(../../../images/Group.svg) no-repeat center center;
+    background-size: 21px 18px;
+    display: block;
+}
+
+.grid__like:hover {
+    opacity: 0.5;
+  }

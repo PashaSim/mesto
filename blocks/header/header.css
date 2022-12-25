@@ -5,19 +5,18 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-          margin-bottom: 81px;
-}
-
-@media screen and (max-width: 768px) {
-  .header {
-  }
+  -webkit-box-align: flex-start;
+      -ms-flex-align: flex-start;
+          align-items: flex-start;
+          padding-top: 45px;
+          flex-direction: column;
+          margin-bottom: 40px;
 }
 
 @media screen and (max-width: 425px) {
   .header {
+    padding-top: 28px;
+    margin-bottom: 40px;
   }
 }
 

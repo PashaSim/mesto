@@ -1,0 +1,7 @@
+.popup__label {
+    display: block;
+  }
+
+.popup__label:first-child {
+  margin-bottom: 30px;
+}

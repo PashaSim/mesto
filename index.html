@@ -3,80 +3,104 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Путешествия по России</title>
+    <title>Mesto</title>
     <link rel="stylesheet" href="pages/index.css">
   </head>
   <body class="body">
     <div class="page">
       <header class="header">
         <img class="logo" src="images/logo.svg" alt="Логотип Россия">
+        <hr class="header__line">
       </header>
       <main>
 
-        <section class="profile">
-          <img class="profile__avatar" src="images/image.jpg" alt="Логотип Россия">
-          <div class="profile__info">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <p class="profile__subtitle">Исследователь океана</p>
-            <div class="profile__button-edit"></div>
-          </div>
-          <div class="profile__button-add"></div>
+        <section class="profile">    
+            <img class="profile__avatar" src="images/image.jpg" alt="Логотип Россия">
+            <div class="profile__info">
+                <div class="profile__wrap">
+                  <div class="profile__name" id="profile__name">Жак-Ив Кусто</div>
+                  <button class="profile__button-edit" title="Редактировать профиль" aria-label="Редактировать профиль" type="button" name="edit"></button>
+              </div>
+              <p class="profile__subtitle" id="profile__subtitle">Исследователь океана</p>
+            </div>
+          <button class="profile__button-add" type="button"></button>
         </section>
 
         <section class="grid">
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Поезд">
+            <img class="grid__photo" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Карачаевск">
             <div class="grid__info">
               <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <button type="button" class="grid__like"></button>
+              </button>
             </div>
           </div>
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Атхарва Тулси">
+            <img class="grid__photo" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора">
             <div class="grid__info">
-              <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <h2 class="grid__text">Гора Эльбрус</h2>
+              <button type="button" class="grid__like"></button>
             </div>
           </div>
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Туман">
+            <img class="grid__photo" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
             <div class="grid__info">
-              <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <h2 class="grid__text">Домбай</h2>
+              <button type="button" class="grid__like"></button>
             </div>
           </div>
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Сочи">
+            <img class="grid__photo" src="images/kirill-pershin-1088404-unsplash-1.jpg" alt="Карачаевск">
             <div class="grid__info">
               <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <button type="button" class="grid__like"></button>
             </div>
           </div>
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Ариса">
+            <img class="grid__photo" src="images/kirill-pershin-1404681-unsplash.jpg" alt="Гора">
             <div class="grid__info">
-              <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <h2 class="grid__text">Гора Эльбрус</h2>
+              <button type="button" class="grid__like"></button>
             </div>
           </div>
           <div class="grid__item">
-            <img class="grid__photo" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Байкал">
+            <img class="grid__photo" src="images/kirill-pershin-1556355-unsplash.jpg" alt="Домбай">
             <div class="grid__info">
-              <h2 class="grid__text">Карачаевск</h2>
-              <img src="images/Group.svg" alt="Лайк">
+              <h2 class="grid__text">Домбай</h2>
+              <button type="button" class="grid__like"></button>
             </div>
           </div>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
-        <div class="popup">
-          <h2 class="">Редактировать профиль</h2>
-          <form>
-            
-          </form>
-        </div>
+          <div class="popup profile-popup">
+            <div class="popup__container popup__container_place_form">
+              <button class="popup__close" title="Закрыть" aria-label="Закрыть" type="button"></button>
+              <div class="popup__content">
+                <form class="popup__form popup__form_place_profile" name="edit-profile" novalidate>
+                  <h2 class="popup__heading">Редактировать профиль</h2>
+                  <fieldset class="popup__fieldset">
+                    <label class="popup__label">
+                      <input type="text" class="popup__input popup__input_place_name" placeholder="Имя" name="user_name" id="user-name-input" required minlength="2" maxlength="40">
+                    </label>
+                    <label class="popup__label">
+                      <input type="text" class="popup__input popup__input_place_bio" placeholder="О себе" name="user_bio" id="user-bio-input" required minlength="2" maxlength="200">
+                    </label>
+                  </fieldset>
+                  <button type="submit" class="popup__submit">Сохранить</button>
+                </form>
+              </div>
+            </div>
+          </div>
       </footer>
     </div>
+    <script src="/pages/index.js"></script>
   </body>
 </html>
+
+
+
+
+
+
