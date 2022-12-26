@@ -6,6 +6,7 @@
     background: url(../../../images/Group.svg) no-repeat center center;
     background-size: 21px 18px;
     display: block;
+    cursor: pointer;
 }
 
 .grid__like:hover {

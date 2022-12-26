@@ -3,6 +3,7 @@
     padding: 23px 73px;
     margin-left: auto;
     background: url(../../../images/VectorX.svg) no-repeat center center;
+    cursor: pointer;
 }
 
 .profile__button-add:hover {
