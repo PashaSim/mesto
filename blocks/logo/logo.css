@@ -1,6 +1,7 @@
 .logo {
   height: 33px;
   width: 142px;
+  margin-bottom: 41px;
 }
 
 @media screen and (max-width: 426px) {
@@ -8,5 +9,6 @@
     height: 24.4px;
     width: 103.74px;
     margin-left: 27px;
+    margin-bottom: 31.6px;
   }
 }

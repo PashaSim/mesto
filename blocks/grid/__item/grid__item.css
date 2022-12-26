@@ -1,10 +1,8 @@
 .grid__item {
-  max-width: 100%;
-  min-height: 361px;
+  max-width: 282px;
   width: 100%;
   object-fit: cover;
   -o-object-fit: cover;
   background-color: white;
   border-radius: 10px;
-  overflow: hidden;
 }
