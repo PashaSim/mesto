@@ -10,7 +10,7 @@
   gap: 8px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 480px) {
   .profile__info {
     margin: 26px 0 0 0;
     -webkit-box-align: center;
