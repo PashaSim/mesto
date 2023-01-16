@@ -12,4 +12,5 @@
   visibility: hidden;
   opacity: 0;
   cursor: pointer;
+  transition: 0.5s, opacity 0.3s linear;
 }

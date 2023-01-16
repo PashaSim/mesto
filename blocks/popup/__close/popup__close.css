@@ -9,6 +9,7 @@
     right: -40px;
     top: -40px;
     cursor: pointer;
+    transition: 0.5s, opacity 0.3s linear;
   }
   
   .popup__close:hover {

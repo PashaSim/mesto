@@ -1,0 +1,10 @@
+.grid__items {
+  max-width: 282px;
+  width: 100%;
+  object-fit: cover;
+  -o-object-fit: cover;
+  background-color: white;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+}
