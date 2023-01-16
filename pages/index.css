@@ -12,7 +12,6 @@
 @import url(../blocks/profile/__wrap/profile__wrap.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__subtitle/profile__subtitle.css);
-@import url(../blocks/grid/grid.css);
 @import url(../blocks/grid/__trash/card__trash.css);
 @import url(../blocks/grid/__item/grid__item.css);
 @import url(../blocks/grid/__items/grid__items.css);
