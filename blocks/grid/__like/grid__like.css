@@ -1,12 +1,12 @@
 .grid__like {
     border: none;
-    width: 21px;
-    height: 18px;
+    width: 22px;
+    height: 19px;
     padding: 0;
     background: url(../../../images/Group.svg) no-repeat center center;
-    background-size: 21px 18px;
     display: block;
     cursor: pointer;
+    background-size: contain;
 }
 
 .grid__like:hover {
