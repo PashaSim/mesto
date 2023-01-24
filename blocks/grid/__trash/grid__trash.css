@@ -1,4 +1,4 @@
-.card__trash {
+.grid__trash {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -9,6 +9,6 @@
   cursor: pointer;
 }
 
-.card__trash:hover {
+.grid__trash:hover {
   opacity: 0.6;
 }

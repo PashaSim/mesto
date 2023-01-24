@@ -35,6 +35,7 @@ const popupNameProf = popupProf.querySelector('.popup__input_place_name');
 const popupSubtitle = popupProf.querySelector('.popup__input_place_bio');
 const saveButtonProf = popupProf.querySelector('.popup__submit');
 const popupCard = document.querySelector('.popup-card');
+const popupCloseCard = popupCard.querySelector('.popup__close');
 const popupOpenAdd = document.querySelector('.profile__button-add');
 const popupAdd = document.querySelector('.popup__form_place_card');
 const popupTitle = popupAdd.querySelector('.popup__input_place_title');
@@ -52,6 +53,7 @@ function closePopup(element) {
   element.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupKey);
 }
+
 //закрыть ескейп
 function closePopupKey(evt) {
   if (evt.key === 'Escape') {
@@ -75,6 +77,7 @@ popupOpenAdd.addEventListener('click', () => {
 });
 
 popupCloseButton.addEventListener('click', () => closePopup(popupProf));
+popupCloseCard.addEventListener('click',() => closePopup(popupCard));
 
 //редактировать проф.
 const createPopupVisibility = () => {
@@ -83,14 +86,16 @@ const createPopupVisibility = () => {
 };
 
 //данные профиля сохранение
-function ProfileFormSubmit(evt) {
+function profileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = popupNameProf.value;
   profileSubtitle.textContent = popupSubtitle.value;
   closePopup(popupProf);
 }
 
-popupEdit.addEventListener('submit', ProfileFormSubmit);
+popupEdit.addEventListener('submit', profileFormSubmit);
+
+
 
 
 
