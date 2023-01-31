@@ -160,11 +160,11 @@ initialCards.reverse().forEach(data => {
 //добавление карточек для пользователей через попап
 function cardFormSubmit(evt) {
   evt.preventDefault();
-  const linkInput = popupLinkCard.value;
-  const nameInput = popupNameCard.value;
+  const link = popupLinkCard.value;
+  const name = popupNameCard.value;
   const newCard = createCard({
-    link: linkInput,
-    name: nameInput
+    link: link,
+    name: name
   });
   
   renderCard(newCard);
