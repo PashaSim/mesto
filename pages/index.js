@@ -25,7 +25,6 @@ const initialCards = [
   }
 ];
 
-
 //профиль
 const popupProf = document.querySelector('.profile-popup'); 
 const popupOpenEdit = document.querySelector('.profile__button-edit');
@@ -52,12 +51,11 @@ const popupCloseImg = popupImg.querySelector(".popup__close-image");
 const popupImage = popupImg.querySelector('.popup__image');
 const popupNameImg = popupImg.querySelector('.popup__name');
 
-
-
 //закрыть
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupKey);
+  document.removeEventListener('click', closePopupOverlay);
 }
 
 //закрыть ескейп
@@ -68,10 +66,18 @@ function closePopupKey(evt) {
   }
 }
 
+//закрыть оверлей
+function closePopupOverlay(evt) {
+  if(evt.target.classList.contains('popup')) {
+      closePopup(evt.target);
+  }
+}
+
 //открыть
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupKey);
+  document.addEventListener('click', closePopupOverlay);
 }
 
 //открытие попапа для профиля
@@ -84,6 +90,7 @@ popupOpenEdit.addEventListener('click', () => {
 popupOpenAdd.addEventListener('click', () => {
   openPopup(popupCard);
 });
+
 
 //закрытие на крестик всех попапов
 popupCloseProf.addEventListener('click', () => closePopup(popupProf));
@@ -174,3 +181,6 @@ function cardFormSubmit(evt) {
 
 popupFormAdd.addEventListener("submit", cardFormSubmit);
 popupFormEdit.addEventListener('submit', submitProfileForm);
+
+
+
