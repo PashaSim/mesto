@@ -1,39 +1,13 @@
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 //профиль
-const popupProf = document.querySelector('.profile-popup'); 
+const popupProfile = document.querySelector('.profile-popup'); 
 const popupOpenEdit = document.querySelector('.profile__button-edit');
 const profileName = document.querySelector('.profile__name');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const popupFormEdit = document.querySelector('.popup__form_place_profile');
-const popupNameProf = popupProf.querySelector('.popup__input_place_name');
-const popupSubtitle = popupProf.querySelector('.popup__input_place_bio');
-const popupCloseProf = document.querySelector('.popup__close');
+const popupNameProfile = popupProfile.querySelector('.popup__input_place_name');
+const popupSubtitle = popupProfile.querySelector('.popup__input_place_bio');
+const popupCloseProfile = document.querySelector('.popup__close');
+const popups = Array.from(document.querySelectorAll('.popup'))// ищим оверлей
 
 //карточки
 const popupCard = document.querySelector('.popup-card');
@@ -44,6 +18,8 @@ const popupNameCard = popupFormAdd.querySelector('.popup__input_place_title');
 const popupLinkCard = popupFormAdd.querySelector('.popup__input_place_link');
 const cardItem = document.querySelector(".grid__item");
 const cardTemplate = document.querySelector("#grid").content;
+const inputPopupCard = Array.from(popupFormAdd.querySelectorAll(".popup__input"));
+const buttonNoValidCard = popupFormAdd.querySelector(".popup__submit");
 
 //картинки
 const popupImg = document.querySelector('.popup_place_image');
@@ -55,7 +31,6 @@ const popupNameImg = popupImg.querySelector('.popup__name');
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closePopupKey);
-  document.removeEventListener('click', closePopupOverlay);
 }
 
 //закрыть ескейп
@@ -73,42 +48,46 @@ function closePopupOverlay(evt) {
   }
 }
 
+popups.forEach((popup) => {
+    popup.addEventListener('click', closePopupOverlay)
+}) 
+
 //открыть
 function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupKey);
-  document.addEventListener('click', closePopupOverlay);
 }
 
 //открытие попапа для профиля
 popupOpenEdit.addEventListener('click', () => {
-  fillPopupProfileFields();
-  openPopup(popupProf);
+  fillPopupProfileileFields();
+  openPopup(popupProfile);
 });
 
 //открытие попапа для карточки
 popupOpenAdd.addEventListener('click', () => {
+  toggleButtonState(inputPopupCard,buttonNoValidCard, validationConfig);
   openPopup(popupCard);
 });
 
 
 //закрытие на крестик всех попапов
-popupCloseProf.addEventListener('click', () => closePopup(popupProf));
+popupCloseProfile.addEventListener('click', () => closePopup(popupProfile));
 popupCloseCard.addEventListener('click',() => closePopup(popupCard));
 popupCloseImg.addEventListener('click',() => closePopup(popupImg));
 
 //редактировать проф.
-const fillPopupProfileFields = () => {
-  popupNameProf.value = profileName.textContent;
+const fillPopupProfileileFields = () => {
+  popupNameProfile.value = profileName.textContent;
   popupSubtitle.value = profileSubtitle.textContent;
 };
 
 //данные профиля сохранение
-function submitProfileForm(evt) {
+function submitProfileileForm(evt) {
   evt.preventDefault();
-  profileName.textContent = popupNameProf.value;
+  profileName.textContent = popupNameProfile.value;
   profileSubtitle.textContent = popupSubtitle.value;
-  closePopup(popupProf);
+  closePopup(popupProfile);
 }
 
 //лайк активный
@@ -180,7 +159,8 @@ function cardFormSubmit(evt) {
 }
 
 popupFormAdd.addEventListener("submit", cardFormSubmit);
-popupFormEdit.addEventListener('submit', submitProfileForm);
+popupFormEdit.addEventListener('submit', submitProfileileForm);
+popupFormAdd.addEventListener("submit", createCard);
 
 
 

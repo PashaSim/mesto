@@ -62,3 +62,10 @@ const showInputError = (formObject, inputElement, config) => {
   }
 
   activatValidation(validationConfig);
+
+
+
+
+
+
+

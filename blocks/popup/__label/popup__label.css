@@ -3,5 +3,9 @@
   }
 
 .popup__label:first-child {
-  margin-bottom: 10px;
+  margin-bottom: 29px;
+}
+
+.popup__label:last-child {
+  margin-bottom: 20px;
 }

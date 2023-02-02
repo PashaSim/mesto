@@ -1,4 +1,6 @@
 .popup__error-text {
   display: block;
+  position: absolute;
   padding-top: 2px;
 }
+
